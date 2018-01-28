@@ -1,0 +1,23 @@
+
+		{% block content %}
+		<h2 style = "text-align: center;">album rating (low=1,high=3)</h2>
+		<form action = "http://localhost:5000/album_result" method='POST'>
+
+	{{ form.hidden_tag() }}
+      {% for message in get_flashed_messages() %}
+      {{ message }}  
+      {% endfor %}
+		<div style = font-size:20px; font-weight:bold; margin-left:150px;>
+			{{ form.album.label }}
+			{{ form.album() }}
+			<br>
+			<br>
+			{{ form.albumrating.label }}
+			{{ form.albumrating() }}
+			<br>
+			<br>
+		
+			{{ form.submit() }}
+		<div>
+		</form>
+		{% endblock %}
